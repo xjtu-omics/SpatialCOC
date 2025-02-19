@@ -1,5 +1,15 @@
 # SpaKnit: correlation subspace learning for integrating spatial multi-omics data
 
+![Static Badge](https://img.shields.io/badge/Lisence-GPL3.0-blue)
+
+![GitHub repo size](https://img.shields.io/github/repo-size/xjtu-omics/SpaKnit)
+
+![Static Badge](https://img.shields.io/badge/3.11-green?logo=python&label=Python&labelColor=yellow)
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14854748.svg)](https://doi.org/10.5281/zenodo.14854748)
+
+![GitHub Repo stars](https://img.shields.io/github/stars/xjtu-omics/SpaKnit)
+
 > This repository contains the essential materials for reproducing the results of **SpaKnit**.
 
 ## Description
@@ -7,23 +17,6 @@
 SpaKnit is a multimodal integration framework for spatial multi-omics data. SpaKnit treats different omics modalities as continuous functions defined by their shared spatial coordinates, enabling it to uncover nonlinear correlations among these modalities.
 
 ![SpaKnit_Framework](./Sources/SpaKnit_Framework.png)
-
-## Requirements
-
-- python==3.11.5
-- torch==2.1.2
-- torchvision==0.16.2
-- numpy==1.24.3
-- scipy==1.11.3
-- scikit-learn==1.6.0
-- pandas==2.1.1
-- scanpy==1.9.5
-- anndata==0.11.1
-- tqdm==4.65.0
-- matplotlib==3.8.0
-- opencv-python==4.9.0.80
-- rpy2==3.5.14
-- R==4.3.1
 
 ## Getting started
 
