@@ -1,0 +1,89 @@
+---
+title: "Seurat"
+date: "2024-12-17"
+output: pdf_document
+---
+
+```{r}
+library(Seurat)
+library(dplyr)
+library(SeuratDisk)
+library(anndata)
+```
+
+```{r}
+setwd("D:/study/learning/spatial_transcriptome/papers/spatial_multi_omics-main/data/Mouse_Spleen_1")
+```
+
+```{r}
+x <- read.csv("RNA_raw-counts.csv",header=TRUE)
+
+rownames(x) <- x[,1]
+x[,1] <- NULL
+m <- read.csv("RNA_metadata.csv",header=TRUE)
+
+saveRDS(
+  CreateSeuratObject(counts=t(x),meta.data=m,project="seurat",min.cells=10,min.features=0), "RNA.Rds")
+```
+
+```{r}
+seurat_object <- readRDS("D:/study/learning/spatial_transcriptome/papers/spatial_multi_omics-main/data/Mouse_Spleen_1/R/RNA.Rds")
+```
+
+```{r}
+rna <- NormalizeData(seurat_object, normalization.method = "LogNormalize", scale.factor = 10000)
+rna <- FindVariableFeatures(rna, selection.method = "vst", nfeatures = 3000)
+all.genes <- rownames(rna)
+rna <- ScaleData(rna, features = all.genes)
+rna <- RunPCA(rna, features = VariableFeatures(object = rna))
+```
+
+```{r}
+x <- read.csv("ADT_raw-counts.csv",header=TRUE)
+
+rownames(x) <- x[,1]
+x[,1] <- NULL
+m <- read.csv("ADT_metadata.csv",header=TRUE)
+
+saveRDS(
+  CreateSeuratObject(counts=t(x),meta.data=m,project="seurat",min.cells=0,min.features=0), "ADT.Rds")
+```
+
+```{r}
+seurat_object <- readRDS("D:/study/learning/spatial_transcriptome/papers/spatial_multi_omics-main/data/Mouse_Spleen_1/R/ADT.Rds")
+```
+
+```{r}
+adt <- NormalizeData(seurat_object, normalization.method = 'CLR', margin = 2)
+adt <- FindVariableFeatures(adt, selection.method = "vst", nfeatures = 3000)
+all.genes <- rownames(adt)
+adt <- ScaleData(adt, features = all.genes)
+adt <- RunPCA(adt, features = VariableFeatures(object = adt))
+```
+
+```{r}
+counts_matrix <- GetAssayData(adt, assay = "RNA", slot = "counts")
+rna[["ADT"]] <- CreateAssayObject(counts = counts_matrix)
+DefaultAssay(rna) <- 'RNA'
+rna <- NormalizeData(rna) %>% FindVariableFeatures() %>% ScaleData() %>% RunPCA()
+
+DefaultAssay(rna) <- 'ADT'
+# we will use all ADT features for dimensional reduction
+# we set a dimensional reduction name to avoid overwriting the 
+VariableFeatures(rna) <- rownames(rna[["ADT"]])
+rna <- NormalizeData(rna, normalization.method = 'CLR', margin = 2) %>% 
+  ScaleData() %>% RunPCA(reduction.name = 'apca')
+
+rna <- FindMultiModalNeighbors(
+  rna, reduction.list = list("pca", "apca"), 
+  dims.list = list(1:30, 1:18), modality.weight.name = "RNA.weight"
+)
+
+rna <- RunUMAP(rna, nn.name = "weighted.nn", reduction.name = "wnn.umap", reduction.key = "wnnUMAP_")
+rna <- FindClusters(rna, graph.name = "wsnn", algorithm = 3, resolution = 0.85, verbose = FALSE)
+DimPlot(rna, reduction = 'wnn.umap', label = TRUE, repel = TRUE, label.size = 2.5)
+umap_coords <- rna[["wnn.umap"]]@cell.embeddings
+
+rna@meta.data <- cbind(rna@meta.data, umap_coords)
+write.csv(rna@meta.data, 'wnn_meta.csv')
+```
