@@ -1,13 +1,9 @@
 # SpaKnit: correlation subspace learning for integrating spatial multi-omics data
 
 ![Static Badge](https://img.shields.io/badge/Lisence-GPL3.0-blue)
-
 ![GitHub repo size](https://img.shields.io/github/repo-size/xjtu-omics/SpaKnit)
-
 ![Static Badge](https://img.shields.io/badge/3.11-green?logo=python&label=Python&labelColor=yellow)
-
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14854748.svg)](https://doi.org/10.5281/zenodo.14854748)
-
 ![GitHub Repo stars](https://img.shields.io/github/stars/xjtu-omics/SpaKnit)
 
 > This repository contains the essential materials for reproducing the results of **SpaKnit**.
