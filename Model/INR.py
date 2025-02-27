@@ -8,21 +8,40 @@ from scipy.stats import zscore
 
 dtype = torch.cuda.FloatTensor
 
+# class SineLayer(nn.Module):
+#     """
+#         Applies a sine activation function to the input, followed by a linear transformation to represent complex modalities' signals.
+
+#         Attributes:
+#             linear (nn.Linear): A linear transformation layer.
+#             omega_0 (torch.Tensor): A tensor representing the frequency of the sine function, repeated for each input feature.
+#     """
+#     def __init__(self, in_features, out_features):
+#         super().__init__()
+#         self.linear = nn.Linear(in_features*3, out_features)  
+#         self.omega_0 = torch.Tensor([[1],[2],[3]]).type(
+#             dtype).repeat(1, in_features).reshape(1, in_features*3)
+#     def forward(self, input):
+#         return self.linear(torch.sin(self.omega_0*input.repeat(1,3)))
+
 class SineLayer(nn.Module):
     """
-        Applies a sine activation function to the input, followed by a linear transformation to represent complex modalities' signals.
+    Applies a sine activation function to the input, followed by a linear transformation to represent complex modalities' signals.
 
-        Attributes:
-            linear (nn.Linear): A linear transformation layer.
-            omega_0 (torch.Tensor): A tensor representing the frequency of the sine function, repeated for each input feature.
+    Attributes:
+        linear (nn.Linear): A linear transformation layer.
+        omega_0 (torch.Tensor): A tensor representing the frequency of the sine function, repeated for each input feature.
     """
     def __init__(self, in_features, out_features):
         super().__init__()
-        self.linear = nn.Linear(in_features*3, out_features)  
-        self.omega_0 = torch.Tensor([[1],[2],[3]]).type(
-            dtype).repeat(1, in_features).reshape(1, in_features*3)
+        self.linear = nn.Linear(in_features * 3, out_features)
+        self.omega_0 = torch.tensor([[1], [2], [3]], dtype=torch.float32)
+        self.omega_0 = self.omega_0.repeat(1, in_features).reshape(1, in_features * 3)
+
     def forward(self, input):
-        return self.linear(torch.sin(self.omega_0*input.repeat(1,3)))
+        input = input.repeat(1, 3)
+        input = input * self.omega_0.to(input.device)
+        return self.linear(torch.sin(input))
 
 class INR(nn.Module):
     """
@@ -85,8 +104,8 @@ def spatial_build_kernel(location, kerneltype="gaussian", bandwidth_set_by_user=
 class INRModel(nn.Module):
     def __init__(self, X, spatial_coord, device, learning_rate=1e-4, reg_par=1e-4, epoch_num=100, bandwidth=0.002, print_train_log_info=True):
         super().__init__()
-        self.X = torch.from_numpy(X).float().to(device)
-        self.coords = torch.from_numpy(spatial_coord).float().to(device)
+        self.X = X
+        self.coords = spatial_coord
         self.learning_rate_ = learning_rate
         self.device = device
         self.reg_par_ = reg_par

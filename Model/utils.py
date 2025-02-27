@@ -251,6 +251,19 @@ def generate_noise(X, mean, std, mode, dropout_rate):
     print(snr)
     return X_noised
 
+def reorder_categories(adata, method, new_order):
+    """
+    Reorder the categories of a given method in the AnnData object's.obs.
+    
+    Parameters:
+    adata: AnnData object
+    method: str, the name of the method to reorder
+    new_order: list, the new order of categories
+    """
+    if not pd.api.types.is_categorical_dtype(adata.obs[method]):
+        adata.obs[method] = pd.Categorical(adata.obs[method])
+    adata.obs[method] = adata.obs[method].cat.reorder_categories(new_order)
+
 def expand_anndata(adata, used_rep='obsm'):
     """
     Expand the original AnnData object to a new AnnData object.
