@@ -8,22 +8,6 @@ from scipy.stats import zscore
 
 dtype = torch.cuda.FloatTensor
 
-# class SineLayer(nn.Module):
-#     """
-#         Applies a sine activation function to the input, followed by a linear transformation to represent complex modalities' signals.
-
-#         Attributes:
-#             linear (nn.Linear): A linear transformation layer.
-#             omega_0 (torch.Tensor): A tensor representing the frequency of the sine function, repeated for each input feature.
-#     """
-#     def __init__(self, in_features, out_features):
-#         super().__init__()
-#         self.linear = nn.Linear(in_features*3, out_features)  
-#         self.omega_0 = torch.Tensor([[1],[2],[3]]).type(
-#             dtype).repeat(1, in_features).reshape(1, in_features*3)
-#     def forward(self, input):
-#         return self.linear(torch.sin(self.omega_0*input.repeat(1,3)))
-
 class SineLayer(nn.Module):
     """
     Applies a sine activation function to the input, followed by a linear transformation to represent complex modalities' signals.
@@ -80,9 +64,11 @@ def kernel_build_sparse(kerneltype, location, bandwidth, tol):
     """
     K = kernel_build(kerneltype, location, bandwidth)
     K_sparse = lil_matrix(K)
-    for i in range(K_sparse.shape[0]):
-        indices_to_keep = np.abs(K_sparse.data[K_sparse.indptr[i]:K_sparse.indptr[i+1]]) > tol
-        K_sparse.data[K_sparse.indptr[i]:K_sparse.indptr[i+1]][indices_to_keep] = 0
+    
+    # Set elements below the tolerance to 0
+    K_sparse[K_sparse < tol] = 0
+    # Convert to csr_matrix for more efficient operations
+    K_sparse = K_sparse.tocsr()
         
     return K_sparse
 
