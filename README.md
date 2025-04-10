@@ -23,5 +23,4 @@ Before using, please visit the link below to download all the raw data and the r
 ## 📩Contact
 
 - Mingxuan Li: ✉️3123154029@stu.xjtu.edu.cn
-- Kai Ye: ✉️kaiye@xjtu.edu.cn
 
