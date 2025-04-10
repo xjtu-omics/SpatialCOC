@@ -15,7 +15,10 @@ SpaKnit is a multimodal integration framework for spatial multi-omics data. SpaK
 ![SpaKnit_Framework](./SpaKnit_Framework.png)
 
 ## 🎬Getting started
-
+<div style="background-color: #fff; border: 2px dashed #ffcc00; padding: 10px; border-radius: 10px; width: fit-content; display: inline-block; margin: 10px 0;">
+  <p style="color: #ff6600; font-size: 14px; font-weight: bold;">便签：</p>
+  <p style="font-size: 12px; color: #333;">这是一个便签纸形式的文字，可以用来添加一些提醒或注意事项。</p>
+</div>
 We provide detailed Toturials as well as  Documentation at [SpaKnit' toturials and documentation](https://spaknit-tutorial.readthedocs.io/en/latest/).
 
 ## 📩Contact
