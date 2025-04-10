@@ -1,7 +1,7 @@
 from setuptools import Command, find_packages, setup
 
 __lib_name__ = "SpaKnit"
-__lib_version__ = "1.0.1"
+__lib_version__ = "1.0.0"
 __description__ = "SpaKnit is a multimodal integration framework for spatial multi-omics data."
 __url__ = "https://github.com/XJTU-MingxuanLi/SpaKnit"
 __author__ = "Mingxuan Li"
