@@ -16,7 +16,7 @@ SpaKnit is a multimodal integration framework for spatial multi-omics data. SpaK
 
 ## 🎬Getting started
 
-We provide detailed toturials as well as all image reproductions at [SpaKnit' toturials and documentation](https://spaknit-tutorial.readthedocs.io/en/latest/).
+We provide detailed tutorials as well as all image reproductions at [SpaKnit' toturials and documentation](https://spaknit-tutorial.readthedocs.io/en/latest/).
 
 Before using, please visit the link below to download all the raw data and the results: [Data for SpaKnit](https://zenodo.org/records/14854748) and [Results for SpaKnit](https://zenodo.org/records/15182465).
 
