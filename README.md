@@ -12,13 +12,13 @@
 
 SpaKnit is a multimodal integration framework for spatial multi-omics data. SpaKnit treats different omics modalities as continuous functions defined by their shared spatial coordinates, enabling it to uncover nonlinear correlations among these modalities.
 
-
+![SpaKnit_Framework](./SpaKnit_Framework.png)
 
 ## 🎬Getting started
 
-We provide detailed tutorials as well as all image reproductions at [SpaKnit' toturials and documentation](https://spaknit-tutorial.readthedocs.io/en/latest/).
+We provide detailed tutorials as well as all image reproductions at [SpatialCOC' toturials and documentation](https://spaknit-tutorial.readthedocs.io/en/latest/).
 
-Before using, please visit the link below to download all the raw data and the results: [Data for SpaKnit](https://zenodo.org/records/14854748) and [Results for SpaKnit](https://zenodo.org/records/15182465).
+Before using, please visit the link below to download all the raw data and the results: [Data for SpatialCOC](https://zenodo.org/records/14854748) and [Results for SpaKnit](https://zenodo.org/records/15182465).
 
 ## 📩Contact
 
