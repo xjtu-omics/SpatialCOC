@@ -1,4 +1,4 @@
-# SpaKnit: correlation subspace learning for integrating spatial multi-omics data
+# SpatialCOC: an integrative framework for spatial continuous mapping and cross-omics correction in spatial multi-omics data
 
 ![Static Badge](https://img.shields.io/badge/Lisence-GPL3.0-blue)
 ![GitHub repo size](https://img.shields.io/github/repo-size/xjtu-omics/SpaKnit)
