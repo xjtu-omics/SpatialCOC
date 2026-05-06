@@ -11,7 +11,7 @@ All result files are available on Zenodo. Please download and extract to the `./
 
 > 🔗 
 
-## 📁*Analysis* Folder
+## 📁Analysis Folder
 
 This folder contains three sections:
 
@@ -19,7 +19,7 @@ This folder contains three sections:
 - `Ablation_Experiments.ipynb`: Implements four ablation variants, each evaluated on four simulated spatial patterns, with performance in spatial domain identification compared against the full model;
 - `Sensitive_Analysises.ipynb`: Assesses the impact of input dimensionality (original features vs. varying numbers of principal components) on model outputs.
 
-## 🚀*Benchmarking* Folder
+## 🚀Benchmarking Folder
 
 Implementation code for seven methods for comparison with SpatialCOC. Apply the same preprocessing procedure, and then run each method’s program following its official guidelines.
 
@@ -33,7 +33,7 @@ Implementation code for seven methods for comparison with SpatialCOC. Apply the 
 |   STAGATE   |  spatial transcriptome  | [Source](https://www.nature.com/articles/s41467-022-29439-6) |
 |   SpaGCN    |  spatial transcriptome  | [Source](https://www.nature.com/articles/s41592-021-01255-8) |
 
-## 📈*.h5ad* Files
+## 📈.h5ad Files
 
 All results from benchmark methods and SpatialCOC are provided. The `.h5ad` file, a storage format for AnnData objects, is used to store the following core results:
 
@@ -42,7 +42,7 @@ All results from benchmark methods and SpatialCOC are provided. The `.h5ad` file
 | anndata.obs['method']  | categorical | Clustering assignments per method/modality |
 | anndata.obsm['method'] |   ndarray   |   Low-dimensional integrative embeddings   |
 
-## 🖼️*Visualization* Folder
+## 🖼️Visualization Folder
 
 The `Visualization/` directory contains executable scripts for reproducing all figures from the SpatialCOC publication.
 
