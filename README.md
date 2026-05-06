@@ -27,7 +27,7 @@ Please follow the steps below to use SpatialCOC and reproduce the results presen
 
 ## 📩Contact
 
-Mingxuan Li: 3123154029@stu.xjtu.edu.cn
+Mingxuan Li: 3123154029@stu.xjtu.edu.cn & mingxuanli0325@163.com
 
 ## 📕Reference
 
