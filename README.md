@@ -1,7 +1,6 @@
 # SpatialCOC: an integrative framework for spatial continuous mapping and cross-omics correction in spatial multi-omics data
 
 ![Static Badge](https://img.shields.io/badge/Lisence-GPL3.0-blue)
-![GitHub repo size](https://img.shields.io/github/repo-size/xjtu-omics/SpatialCOC)
 ![Static Badge](https://img.shields.io/badge/3.11-green?logo=python&label=Python&labelColor=yellow)
 
 > This repository contains the essential materials for reproducing the results of **SpatialCOC**.
