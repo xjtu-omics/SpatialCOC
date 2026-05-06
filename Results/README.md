@@ -1,9 +1,6 @@
 # SpatialCOC: Results Reproduction and Visualization
 
-<div style="background-color: #e7f3ff; border-left: 4px solid #2196F3; padding: 12px 16px; margin: 16px 0; border-radius: 0 4px 4px 0;">
-  <strong style="color: #1976D2;">Note</strong><br>
-  If you want to reproduce the results described in this document using the relevant code provided, please <strong style="color: #0d47a1; background-color: #bbdefb; padding: 2px 4px; border-radius: 3px;">set the corresponding paths</strong> according to your environment.
-</div>
+> If you want to reproduce the results described in this document using the relevant code provided, please <strong style="color: #0d47a1; background-color: #bbdefb; padding: 2px 4px; border-radius: 3px;">set the corresponding paths</strong> according to your environment.
 
 ## ✔️Data Access
 
