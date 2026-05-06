@@ -8,8 +8,8 @@ A robust evaluation of integrative methods must address the inherent spatial str
 2. **Authentic Noise Interference.**
 
 These complex spatial patterns and noise Interference present a significant challenge to the robustness and generalizability of SpatialCOC. Therefore, we conducted a systematic evaluation across multiple simulated scenarios and several real biological contexts: 
-
-![Datasets](\Figures\Datasets.png)
+Figures/Datasets.png
+![Datasets](Figures/Datasets.png)
 
 ## &#x1F511;Data Sources
 
