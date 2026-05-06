@@ -1,16 +1,5 @@
 # Data Sources and Simulated Data Generation Strategies
 
-## 🚀Overview
-
-A robust evaluation of integrative methods must address the inherent spatial structural heterogeneity and the authentic technical noise found in real tissues:
-
-1. **Diversity Spatial Distribution Patterns.**
-2. **Authentic Noise Interference.**
-
-These complex spatial patterns and noise Interference present a significant challenge to the robustness and generalizability of SpatialCOC. Therefore, we conducted a systematic evaluation across multiple simulated scenarios and several real biological contexts: 
-Figures/Datasets.png
-![Datasets](../Figures/Datasets.png)
-
 ## &#x1F511;Data Sources
 
 Raw files and counts matrix of data employed in this paper are available in raw form from their original authors. 
