@@ -6,19 +6,11 @@
 
 All result files are available on Zenodo. Please download and extract to the `./Results` subdirectory:
 
-> 🔗 
+> 🔗 https://doi.org/10.5281/zenodo.20115541
 
-## 📁Analysis Folder
+## 🚀Benchmarking
 
-This folder contains three sections:
-
-- `Single_Modality_Analyses` subfolder: Contains mono-modal analysis pipelines applied to each real-world dataset;
-- `Ablation_Experiments.ipynb`: Implements four ablation variants, each evaluated on four simulated spatial patterns, with performance in spatial domain identification compared against the full model;
-- `Sensitive_Analysises.ipynb`: Assesses the impact of input dimensionality (original features vs. varying numbers of principal components) on model outputs.
-
-## 🚀Benchmarking Folder
-
-Implementation code for seven methods for comparison with SpatialCOC. Apply the same preprocessing procedure, and then run each method’s program following its official guidelines.
+Seven methods for comparison with SpatialCOC. Apply the same preprocessing procedure, and then run each method’s program following its official guidelines.
 
 |   Method    |        Category         |                          Reference                           |
 | :---------: | :---------------------: | :----------------------------------------------------------: |
@@ -29,6 +21,14 @@ Implementation code for seven methods for comparison with SpatialCOC. Apply the 
 |  MultiMAP   | single-cell multi-omics | [Source](https://link.springer.com/article/10.1186/s13059-021-02565-y) |
 |   STAGATE   |  spatial transcriptome  | [Source](https://www.nature.com/articles/s41467-022-29439-6) |
 |   SpaGCN    |  spatial transcriptome  | [Source](https://www.nature.com/articles/s41592-021-01255-8) |
+
+## 📁Analysis Folder
+
+This folder contains three sections:
+
+- `Single_Modality_Analyses` subfolder: Contains mono-modal analysis pipelines applied to each real-world dataset;
+- `Ablation_Experiments.ipynb`: Implements four ablation variants, each evaluated on four simulated spatial patterns, with performance in spatial domain identification compared against the full model;
+- `Sensitive_Analysises.ipynb`: Assesses the impact of input dimensionality (original features vs. varying numbers of principal components) on model outputs.
 
 ## 📈.h5ad Files
 
