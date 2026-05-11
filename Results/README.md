@@ -4,7 +4,7 @@
 
 ## ✔️Data Access
 
-All result files are available on Zenodo. Please download and extract to the `./Results` subdirectory:
+All result files are available on Zenodo. Please download and extract them into the ./Results subdirectory, placing each h5ad file directly in that directory.
 
 > 🔗 https://doi.org/10.5281/zenodo.20115541
 
