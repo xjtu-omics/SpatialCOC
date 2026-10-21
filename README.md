@@ -22,7 +22,7 @@ Please follow the steps below to use SpatialCOC and reproduce the results presen
 3. **Reproduce the results**
    Follow the instructions in the `./Results` subfolder to reproduce the results reported in the paper.
 
-We provide detailed Toturials as well as  Documentation at [SpatialCOC' toturials and documentation](https://spatialcoc-tutorial.readthedocs.io/en/latest/).
+We provide detailed Toturials as well as Documentation at [SpatialCOC's toturials and documentation](https://spatialcoc-tutorial.readthedocs.io/en/latest/).
 
 ---
 
